@@ -1,6 +1,6 @@
 package net.ryan.mccourse.block;
 
-import net.minecraft.resources.ResourceLocation;
+
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create((ResourceLocation) ForgeRegistries.BLOCKS,MCCourseMod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS,MCCourseMod.MOD_ID);
 
     public static final RegistryObject<Block> ALEXANDRITE_BLOCK = registerBlock("alexandrite_block",
             () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
