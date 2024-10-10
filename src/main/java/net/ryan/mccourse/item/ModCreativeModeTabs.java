@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.ryan.mccourse.MCCourseMod;
+import net.ryan.mccourse.block.ModBlocks;
 
 import java.awt.*;
 
@@ -17,7 +18,19 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> COURSE_TAB = CREATIVE_MODE_TABS.register("course_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALEXANDRITE.get()))
-                    .title(Component.translatable())
+                    .title(Component.translatable("creativetab.course_tab")).displayItems((displayParameters, output) -> {
+                        output.accept(ModItems.ALEXANDRITE.get());
+                        output.accept(ModItems.RAW_ALEXANDRITE.get());
+
+                        output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
+                        output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+                        output.accept(ModBlocks.ALEXANDRITE_ORE.get());
+
+
+                    }).build());
+
+
+
 
 
 
